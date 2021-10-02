@@ -168,3 +168,5 @@ function addFriend(userObj, friend) {
 }
 
 console.log(addFriend(user, "Pete"));
+let angka = 23423;
+console.log(angka[2]);
