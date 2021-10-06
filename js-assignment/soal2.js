@@ -9,6 +9,7 @@ const last = (arr, n = 0) => {
     return sortArr.filter((val) => val < n);
   }
 };
+
 // console.log(last([8, 2, 0, -7]));
 // console.log(last([8, 2, 0, -7], 3));
 // console.log(last([8, 2, 0, -7], 8));
@@ -28,8 +29,9 @@ function union(arr1, arr2) {
 // 4
 function diffArray(arr1, arr2) {
   return arr1
-    .filter((index) => arr2.includes(index))
-    .concat(arr2.filter((index) => arr1.includes(index)));
+    .filter((index) => !arr2.includes(index))
+    .concat(arr2.filter((index) => !arr1.includes(index)))
+    .sort((a, b) => a - b);
 }
 
 // console.log(diffArray([1, 2, 6], [200, 2, 1, 14]));
@@ -46,7 +48,7 @@ const unzip = (arr) => {
       return arrSt.push(index);
     } else if (typeof index === "number") {
       return arrNum.push(index);
-    } else if(typeof index === 'boolean'){
+    } else if (typeof index === "boolean") {
       return arrBool.push(index);
     }
   });
@@ -54,19 +56,18 @@ const unzip = (arr) => {
   return newArr;
 };
 
-console.log(
-  unzip([
-    ["a", 1, true],
-    ["b", 2, false],
-  ])
-
-  );
-console.log(
-  unzip([
-    ["a", 1, true],
-    ["b", 2],
-  ])
-);
+// console.log(
+//   unzip([
+//     ["a", 1, true],
+//     ["b", 2, false],
+//   ])
+// );
+// console.log(
+//   unzip([
+//     ["a", 1, true],
+//     ["b", 2],
+//   ])
+// );
 
 // Question Object
 // 1
@@ -120,9 +121,9 @@ let students = {
   houseNumber: 20,
 };
 
-// console.log(students);
-// delete students.houseNumber;
-// console.log(students);
+console.log(students);
+delete students.houseNumber;
+console.log(students);
 
 // Question Class
 class Shape {
@@ -142,9 +143,9 @@ class Shape {
 }
 
 let square = new Shape("persegi", 3);
-// console.log(`Shape name is = ${square._name}`);
-// console.log(`Keliling bangun = ${square.calcParameter}`);
+console.log(`Shape name is = ${square._name}`);
+console.log(`Keliling bangun = ${square.calcParameter}`);
 
-// const array2 = [2, 3, 4, 12, 4, 512];
-// console.log([...new Set([...arrays, ...array2])]);
-// const arrays = [2, 3, 53, 12, 2, 123, 0];
+let triangle = new Shape("segitiga", 3);
+console.log(`Shape name is = ${triangle._name}`);
+console.log(`Keliling bangun = ${triangle.calcParameter}`);

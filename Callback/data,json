@@ -1,0 +1,18 @@
+const mahasiswa = [
+    {
+        nama : "aris",
+        umur : 23
+    },
+    {
+        nama :"bambang",
+        umur :24
+    },
+    {
+        nama :"rudi",
+        umur :23
+    },
+    {
+        nama :"sahlan",
+        umur :25
+    }
+]
