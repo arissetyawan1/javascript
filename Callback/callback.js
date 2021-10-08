@@ -70,3 +70,38 @@ function hola() {
 
 greetings("Andrian", hola);
 
+// Core concepts callback and rest parameter
+function kali(num1, num2) {
+  return num1 * num2;
+}
+
+function kurang(num1, num2) {
+  return num1 - num2;
+}
+
+function jumlah(num1, num2) {
+  return num1 + num2;
+}
+const hitung = (functions, num1, num2) => {
+  let hasil = functions(num1, num2);
+
+  return hasil;
+};
+
+console.log(hitung(jumlah, 3, 3));
+console.log(hitung(kurang, 3, 4));
+console.log(hitung(kali, 3, 5));
+
+function kelilingPersegi(...sisi) {
+  let keliling = 0;
+  sisi.filter((el) => (keliling = keliling + el));
+  return keliling;
+}
+const kelilingBangunDatar = (functions, ...sisi) => {
+  let hasil = functions(...sisi);
+
+  return hasil;
+};
+
+
+console.log(kelilingBangunDatar(kelilingPersegi, 2,3,4,3));
